@@ -30,7 +30,7 @@ today_deaths = info_list[10].text
 client = discord.Client()
 
 
-WHEN = time(21, 14, 0)
+WHEN = time(21, 16, 0)
 channel_id = 837606361373081670  # Put your channel id here
 
 
