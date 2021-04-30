@@ -30,7 +30,7 @@ today_deaths = info_list[10].text
 client = discord.Client()
 
 
-WHEN = time(21, 16, 0)
+WHEN = time(15, 19, 0)
 channel_id = 837606361373081670  # Put your channel id here
 
 
@@ -67,13 +67,13 @@ async def called_once_a_day():  # Fired every day
 
 
 async def background_task():
-    now = datetime.now()
+    now = datetime.utcnow()
     if now.time() > WHEN:
         tomorrow = datetime.combine(now.date() + timedelta(days=1), time(0))
         seconds = (tomorrow - now).total_seconds()  # Seconds until tomorrow (midnight)
         await asyncio.sleep(seconds)  # Sleep until tomorrow and then the loop will start
     while True:
-        now = datetime.now()
+        now = datetime.utcnow()
         target_time = datetime.combine(now.date(), WHEN)
         seconds_until_target = (target_time - now).total_seconds()
         await asyncio.sleep(seconds_until_target)  # Sleep until we hit the target time
