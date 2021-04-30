@@ -1,8 +1,5 @@
 requests
 beautifulsoup4
 discord
-datetime
-time
-timedelta
 date
 asyncio
