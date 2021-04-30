@@ -1,0 +1,8 @@
+requests
+BeautifulSoup
+discord
+datetime
+time
+timedelta
+date
+asyncio
